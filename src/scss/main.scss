@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// color variables.
+$color-black: #000;
+$color-base: #fff;
+$color-primary: #333;
+$color-dark-bg: #2c2c2c;
+$color-light-bg: #f7f8f9;
+$color-tag-green: #7bc424;
+$color-bg-violet: #8f76bc;
+$color-bg-dark-violet: #8166b0;
+$color-bg-blue: #38d5f4;
+$color-bg-dark-blue: #35cfed;
+$color-button-bg: #ffc80a;
+
+// font-families
+$font-regular: Arvo, sans-serif;
+$font-open-regular: 'Open Sans', sans-serif;
+
+body {
+  font-size: 14px;
+  line-height: 26px;
+  margin: 0;
+
+  & * {
+    box-sizing: border-box
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-white {
+  color: $color-base;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.relative-position {
+  position: relative;
+}
+
+.grid-wrapper {
+  color: $color-primary;
+  font-family: $font-regular;
+  display: grid;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-template-columns: 1fr 1fr 1fr 25%;
+  grid-template-rows: 1fr 1fr 1fr .5fr;
+
+  .flex-block {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .block-7 {
+    @extend .color-white;
+    @extend .overflow-hidden;
+
+    background-color: $color-dark-bg;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .common-heading {
+      width: 34%;
+    }
+  }
+
+  .common-heading {
+    font: 400 22px $font-regular;
+    line-height: 32px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  #tvIcon {
+    @extend .relative-position;
+
+    left: -15%;
+  }
+
+  .block-6 {
+    flex-direction: column;
+    background-color: $color-light-bg;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+
+    .common-heading {
+      @extend .text-center;
+
+      width: 70%;
+    }
+  }
+
+  .tag-item {
+    @extend .text-upper;
+
+    border-radius: 5px;
+    font: 700 8px/20px $font-open-regular;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &.popular {
+      @extend .color-white;
+
+      background-color: $color-tag-green;
+    }
+  }
+
+  .block-5 {
+    @extend .color-white;
+    @extend .overflow-hidden;
+    @extend .text-center;
+
+    background-color: $color-bg-violet;
+    flex-direction: column;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    padding: 30px 5% 70px;
+
+    .common-heading {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 36px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    .info-text {
+      margin-bottom: 0;
+      margin-top: 0;
+      max-width: 290px;
+      width: 80%;
+    }
+  }
+
+  .circle {
+    background-color: $color-bg-dark-violet;
+    border-radius: 50%;
+    flex-direction: column;
+    height: 373px;
+    width: 373px;
+
+
+    &.blue-circle {
+      background-color: $color-bg-dark-blue;
+      height: 240px;
+      width: 240px;
+    }
+
+    #floppyIcon {
+      @extend .relative-position;
+
+      left: -8px;
+    }
+  }
+
+  .flag-item {
+    @extend .color-white;
+    @extend .text-upper;
+
+    background: hsla(0, 0%, 100%, .08) url('../assets/flag-gold.png') 11px 50% / 12px no-repeat;
+    border-radius: 60px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    line-height: 23px;
+    margin-bottom: 20px;
+    padding: 2px 13px 1px 30px;
+  }
+
+  .image-tag {
+    @extend .color-white;
+    @extend .text-upper;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 20px;
+  }
+
+  .button-link {
+    @extend .flex-block;
+    @extend .text-upper;
+
+    background-color: $color-button-bg;
+    border-radius: 50px;
+    color: $color-black;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    margin-top: 30px;
+    min-height: 54px;
+    min-width: 158px;
+  }
+
+  .block-4 {
+    @extend .color-white;
+    @extend .overflow-hidden;
+
+    background-color: $color-bg-blue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+
+    .common-heading {
+      @extend .text-center;
+
+      width: 62%;
+    }
+  }
+}
+

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  </head>
+  <body>
+    <section class="grid-wrapper">
+      <div class="flex-block block-7">
+        <img id="tvIcon" width="271px" alt="TV icon">
+        <h1 class="common-heading">More than just a display, &nbsp;it’s a vision</h1>
+      </div>
+      <div class="flex-block block-6">
+        <span class="tag-item popular">Popular</span>
+        <h1 class="common-heading">Much MuchBetter Experience</h1>
+      </div>
+      <div class="flex-block block-5">
+        <div class="flex-block circle">
+          <div class="flag-item">Popular</div>
+          <img id="floppyIcon" width="239px" alt="Floppy icon">
+          <span class="image-tag">Meet</span>
+        </div>
+        <h1 class="common-heading">iCloud</h1>
+        <p class="info-text">With iCloud, you always have the latest versions of your most important things — like documents, apps, notes, and contacts — on whatever device you’re using.</p>
+        <a class="button-link">Learn More</a>
+      </div>
+      <div class="flex-block block-4">
+        <div class="flex-block circle blue-circle">
+          <img id="twitterIcon" width="43.5px" alt="Twitter icon">
+          <h1 class="common-heading">Connect with Twitter</h1>
+        </div>
+      </div>
+    </section>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  </body>
+</html>
