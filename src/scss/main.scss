@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 // color variables.
 $color-black: #000;
@@ -11,14 +12,21 @@ $color-tag-green: #7bc424;
 $color-bg-violet: #8f76bc;
 $color-bg-dark-violet: #8166b0;
 $color-bg-blue: #38d5f4;
+$color-bg-gry: #93b6b7;
 $color-bg-dark-blue: #35cfed;
 $color-button-bg: #ffc80a;
+$color-link-blue: #27b9c2;
+$color-text-grey: #9fa3a7;
+$color-bg-orange: #f05638;
+$color-tag-orange: #fa684f;
 
 // font-families
-$font-regular: Arvo, sans-serif;
+$font-arvo-regular: Arvo, sans-serif;
 $font-open-regular: 'Open Sans', sans-serif;
+$font-montserrat-regular: 'Montserrat', sans-serif;;
 
 body {
+  background-color: $color-base;
   font-size: 14px;
   line-height: 26px;
   margin: 0;
@@ -50,7 +58,7 @@ body {
 
 .grid-wrapper {
   color: $color-primary;
-  font-family: $font-regular;
+  font-family: $font-open-regular;
   display: grid;
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -81,7 +89,7 @@ body {
   }
 
   .common-heading {
-    font: 400 22px $font-regular;
+    font: 400 22px $font-arvo-regular;
     line-height: 32px;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -130,6 +138,7 @@ body {
     @extend .text-center;
 
     background-color: $color-bg-violet;
+    font-family: $font-open-regular;
     flex-direction: column;
     grid-column-start: 4;
     grid-column-end: 5;
@@ -138,9 +147,7 @@ body {
     padding: 30px 5% 70px;
 
     .common-heading {
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 36px;
+      font: 700 32px/36px $font-arvo-regular;
       margin-bottom: 10px;
       margin-top: 20px;
     }
@@ -192,10 +199,8 @@ body {
     @extend .color-white;
     @extend .text-upper;
 
-    font-size: 12px;
-    font-weight: 700;
+    font: 700 12px/20px $font-montserrat-regular;
     letter-spacing: 2px;
-    line-height: 20px;
   }
 
   .button-link {
@@ -229,5 +234,216 @@ body {
       width: 62%;
     }
   }
-}
 
+  .block-3 {
+    @extend .color-white;
+    @extend .overflow-hidden;
+    @extend .relative-position;
+
+    background: $color-bg-gry url('../assets/UX.png') 50% 100% / 80% no-repeat;
+    flex-direction: column;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding-top: 30px;
+
+    .common-heading {
+      @extend .text-center;
+
+      font-weight: 700;
+      margin: auto;
+      padding-bottom: 31px;
+      padding-top: 31px;
+      width: 50%;
+    }
+
+    #iPadIcon {
+      @extend .relative-position;
+
+      left: -77px;
+    }
+  }
+
+  .long-tag {
+    @extend .text-upper;
+    @extend .text-center;
+
+    background-color: $color-tag-orange;
+    border-radius: 5px;
+    font: 700 8px/20px $font-open-regular;
+    left: 30px;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .block-2 {
+    @extend .overflow-hidden;
+
+    background-color: $color-light-bg;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    #gameIcon {
+      @extend .relative-position;
+
+      left: -7%;
+    }
+
+    .common-heading {
+      @extend .text-center;
+
+      width: 50%;
+    }
+  }
+
+  .common-link {
+    @extend .relative-position;
+    @extend .text-upper;
+
+    font:  700 12px $font-open-regular;
+    letter-spacing: 2.4px;
+    margin-top: 20px;
+    padding-right: 10px;
+    text-decoration: none;
+
+    &::after {
+      border: solid;
+      border-width: 0 2px 2px 0;
+      content: '';
+      display: inline-block;
+      padding: 2px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+      transform: rotate(-45deg);
+    }
+
+    &.blue {
+      color: $color-link-blue;
+    }
+
+    &.yellow {
+      color: $color-button-bg;
+    }
+  }
+
+  .block-1 {
+    @extend .overflow-hidden;
+
+    display: flex;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-content: space-around;
+    padding: 68px 26px 0;
+
+    .common-heading {
+      margin-bottom: auto;
+    }
+  }
+
+  .sub-block-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 180px;
+    width: 50%;
+  }
+
+  .sub-block-2 {
+    width: 40%;
+  }
+
+  #mactiIcon {
+    @extend .relative-position;
+
+    left: -160%;
+    width: 250%;
+  }
+
+  .desc-text {
+    color: $color-text-grey;
+  }
+
+  .tag-text {
+    @extend .text-upper;
+
+    color: $color-text-grey;
+    font: 700 12px/20px $font-montserrat-regular;
+    letter-spacing: 2px;
+  }
+
+  .block-8 {
+    @extend .color-white;
+    @extend .overflow-hidden;
+
+    background-color: $color-bg-orange;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    .common-heading {
+      @extend .text-center;
+
+      font-weight: 700;
+      margin-bottom: 0;
+      width: 60%;
+    }
+  }
+
+  .block-9 {
+    @extend .overflow-hidden;
+
+    flex-direction: column;
+    background-color: $color-light-bg;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    .common-heading {
+      @extend .text-center;
+
+      font-size: 48px;
+      line-height: 60px;
+      margin-bottom: 10px;
+      max-width: 550px;
+    }
+  }
+
+  .normal-link {
+    color: $color-link-blue;
+  }
+
+  .block-10 {
+    @extend .overflow-hidden;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-content: space-around;
+    padding-left: 26px;
+    padding-right: 26px;
+
+    .sub-block-3 {
+      align-items: flex-start;
+      flex-direction: column;
+      width: 32%;
+    }
+
+    #iphoneIcon {
+      margin-top: 40px;
+    }
+  }
+}
